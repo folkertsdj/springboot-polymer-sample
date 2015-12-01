@@ -16,7 +16,7 @@ import javax.servlet.http.HttpSession;
 public class DemoApplication {
 
     @RequestMapping("/")
-	public Map<String, String> token(HttpSession session) {
+	public String<String, String> token(HttpSession session) {
 		return "default request mapping";
 	}
 
