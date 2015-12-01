@@ -1,0 +1,45 @@
+<link rel="import" href="../js/bower_components/polymer/polymer.html">
+<link rel="import" href="/js/bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="/js/bower_components/paper-button/paper-button.html">
+
+<dom-module id="display-module">
+
+  <style>
+	div.bubble {
+		margin: 20px;
+		padding: 20px 20px;
+		border-radius: 20px;
+		background-color: #f1f1f1;
+	}
+  </style>
+
+  <template>
+    <iron-ajax id="dataService"
+               url="/random"
+               on-response="updateData"></iron-ajax>
+    <div class="bubble">
+    Token: <span>[[mydata.id]]</span><br>
+    <paper-button on-click="getData">Get That Data</paper-button>
+    </div>
+  </template>
+
+  <script>
+    Polymer({
+      is: "display-module",
+
+      properties: {
+    	mydata: {
+          type: Object,
+          value: { "id" : "argle flargle" }
+        }
+      },
+      getData: function() {
+    	  this.$.dataService.generateRequest();
+      },
+      updateData: function(theResponse) {
+    	  this.mydata = theResponse.detail.response;
+      }
+    });
+  </script>
+
+</dom-module>

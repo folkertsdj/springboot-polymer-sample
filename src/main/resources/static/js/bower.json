@@ -1,0 +1,21 @@
+{
+  "name": "spring-polymer1-simple",
+  "version": "0.0.0",
+  "homepage": "https://github.com/sdeeg-pivotal/spring-polymer1-sample",
+  "authors": [
+    "sdeeg-pivotal <sdeeg@pivotal.io>"
+  ],
+  "description": "Simple project to test Polymer",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.0.0",
+    "iron-elements": "PolymerElements/iron-elements#~1.0.2"
+  }
+}
