@@ -15,6 +15,11 @@ import javax.servlet.http.HttpSession;
 @SpringBootApplication
 public class DemoApplication {
 
+    @RequestMapping("/")
+	public Map<String, String> token(HttpSession session) {
+		return "default request mapping";
+	}
+
     @RequestMapping("/random")
 	public Map<String, String> token(HttpSession session) {
 		return Collections.singletonMap("id", UUID.randomUUID().toString());
