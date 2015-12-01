@@ -16,9 +16,10 @@ import javax.servlet.http.HttpSession;
 public class DemoApplication {
 
     @RequestMapping("/")
-	public String<String, String> token(HttpSession session) {
-		return "default request mapping";
-	}
+    @ResponseBody
+    String home() {
+      return "Hello World!";
+    }
 
     @RequestMapping("/random")
 	public Map<String, String> token(HttpSession session) {
